@@ -1,14 +1,17 @@
 .card {
+    // functionality
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
     height: 50rem;
 
+    // card sides
     &__side {
-        color: white;
+        color: black;
         font-size: 2rem;
         height: 50rem;
         transition: all .8s ease;
+        overflow: hidden;
 
         position: absolute;
         top: 0;
@@ -29,16 +32,34 @@
                 background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
             }
         }
-
     }
 
-
+    // hover states
     &:hover &__side--front {
-        transform: rotateY(180deg);
+        transform: rotateY(-180deg);
     }
 
     &:hover &__side--back {
         transform: rotateY(0);
+    }
+
+    // front side styling
+    &__picture {
+        background-size: cover;
+        height: 23rem;
+        background-blend-mode: screen;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+        }
+
+        &--2 {
+            background-image: url(../img/nat-5.jpg);
+        }
+
+        &--3 {
+            background-image: url(../img/nat-5.jpg);
+        }
     }
 
 
